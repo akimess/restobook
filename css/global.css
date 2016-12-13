@@ -1,0 +1,21 @@
+body{
+    background: url("../assets/background.jpg") no-repeat center; 
+    background-size: cover;
+}
+
+.home-info{
+    position: relative;
+    top: 15%;
+}
+
+.container{
+    width: 30%;
+    height: 50%;
+    background-color: #333;
+    border-radius: 15px 50px;
+    padding: 20px; 
+}
+
+.home-info-header{
+    color: #B7B7B7 !important;
+}
