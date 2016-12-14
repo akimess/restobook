@@ -15,31 +15,24 @@
 
 <body>
     <section>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="#" class="navbar-brand">Restobook</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Browse</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Restaurants" type="text">
-                        </div>
-                        <button type="submit" class="btn btn-default">Search</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Register restaurant</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div>
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Browse</a></li>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter restaurant name">
+                    </div>
+                    <button type="submit" class="btn btn-default">Search</button>
+                </form>
+                <li role="presentation" class="navbar-right"><a href="#">Register</a></li>
+            </ul>
+        </div>
     </section>
     <section class="home-info">
-        <div class="container">
-            <h1 class="home-info-header">Restaurants reserervation <br> made simple</h1>
+        <div class="body-container">
+            <h1>Restaurant table reservation</h1>
+            <h2>made easy</h2>
         </div>
     </section>
 
