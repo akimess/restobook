@@ -1,0 +1,36 @@
+.nav-pills>li>a{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav-pills>li{
+    margin-top: 5px;
+}
+
+.nav-pills>form{
+    margin-top: 10px;
+}
+
+.nav-pills>li:first-child{
+    margin-left: 5px;
+}
+
+.nav-pills>li:last-child{
+    margin-right: 5px;
+}
+
+.body-container>h1{
+    font-size: 65px;
+}
+
+.body-container>h2{
+    font-size: 50px;
+    float: right;
+}
+
+.home-info{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+}
