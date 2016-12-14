@@ -15,6 +15,10 @@
     margin-left: 5px;
 }
 
+.nav-pills>li:last-child{
+    margin-right: 5px;
+}
+
 .body-container>h1{
     font-size: 65px;
 }
