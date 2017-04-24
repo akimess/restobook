@@ -9,6 +9,7 @@ type Restaurant struct {
 }
 
 type Address struct {
-	City   string `json:"city, omitempty" bson:"city"`
-	Street string `json:"street, omitempty" bson:"street"`
+	Country string `json:"country, omitempty" bson:"country"`
+	City    string `json:"city, omitempty" bson:"city"`
+	Street  string `json:"street, omitempty" bson:"street"`
 }

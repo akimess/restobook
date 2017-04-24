@@ -20,11 +20,12 @@ func getSession() *mgo.Session {
 
 func main() {
 	r := mux.NewRouter()
-	uc := controllers.NewRestarauntController(getSession())
-	r.HandleFunc("/restaraunts", uc.GetRestaraunts).Methods("GET")
-	r.HandleFunc("/restaraunts/{id}", uc.GetRestaraunt).Methods("GET")
-	r.HandleFunc("/createresto", uc.CreateRestaraunt).Methods("POST")
-	r.HandleFunc("/removeresto/{id}", uc.RemoveRestaraunt).Methods("DELETE")
+	rc := controllers.NewRestarauntController(getSession())
+	r.HandleFunc("/restaraunts", rc.GetRestaraunts).Methods("GET")
+	r.HandleFunc("/restaraunts/{id}", rc.GetRestaraunt).Methods("GET")
+	r.HandleFunc("/createresto", rc.CreateRestaraunt).Methods("POST")
+	r.HandleFunc("/removeresto/{id}", rc.RemoveRestaraunt).Methods("DELETE")
+	r.HandleFunc("/updateresto/{id}", rc.UpdateRestaraunt).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":8000", r))
 }

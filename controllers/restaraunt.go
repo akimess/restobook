@@ -101,3 +101,30 @@ func (rc RestarauntController) RemoveRestaraunt(w http.ResponseWriter, r *http.R
 
 	w.WriteHeader(200)
 }
+
+//UpdateRestaraunt updates existing restaraunt data
+func (rc RestarauntController) UpdateRestaraunt(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	id := vars["id"]
+
+	if !bson.IsObjectIdHex(id) {
+		w.WriteHeader(404)
+		return
+	}
+
+	oid := bson.ObjectIdHex(id)
+
+	rt := models.Restaurant{}
+	json.NewDecoder(r.Body).Decode(&rt)
+
+	if err := rc.session.DB("restobook").C("collections").Update(oid, rt); err != nil {
+		w.WriteHeader(404)
+		return
+	}
+
+	rj, _ := json.Marshal(rt)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "%s", rj)
+}
