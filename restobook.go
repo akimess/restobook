@@ -10,7 +10,7 @@ import (
 )
 
 func getSession() *mgo.Session {
-	s, err := mgo.Dial("mongodb://****:*****@ds029565.mlab.com:29565/restobook")
+	s, err := mgo.Dial("mongodb://*****:*****@ds029565.mlab.com:29565/restobook")
 
 	if err != nil {
 		panic(err)
@@ -24,7 +24,7 @@ func main() {
 	r.HandleFunc("/restaraunts", uc.GetRestaraunts).Methods("GET")
 	r.HandleFunc("/restaraunts/{id}", uc.GetRestaraunt).Methods("GET")
 	r.HandleFunc("/createresto", uc.CreateRestaraunt).Methods("POST")
-	r.HandleFunc("/removeresto/{id}", uc.RemoveRestaraunt).Methods("GET")
+	r.HandleFunc("/removeresto/{id}", uc.RemoveRestaraunt).Methods("DELETE")
 
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
